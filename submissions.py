@@ -10,6 +10,7 @@ class submissions:
     self.directory_path = None
   def get_code(self, base_dir):
     submission_dir = create_submission_directory(base_dir, self.problem_id, self.submission_id) #method for saving the submitted code into the appropriate file
+    self.directory_path = submission_dir
     if self.language == "python":filename = "solution.py"
     elif self.language == "c":filename = "solution.c"
     elif self.language == "cpp":filename = "solution.cpp"
