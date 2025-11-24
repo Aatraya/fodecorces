@@ -1,4 +1,4 @@
-
+import ast 
 class Problem:
     def __init__(self,prb_id,tit,des,cons,testcase,time_l,mem_l):#constructor
         self.problem_id=prb_id #problem id
@@ -130,7 +130,7 @@ class Problem:
                 while(True):
                     s=fp.readline()
                     if(s!=""): # i am returning [[(1,2,3),(2,3,4)]] vvimp for each line
-                        l.append(eval(s.strip()))
+                        l.append(ast.literal_eval(s.strip()))
 
                     else:
                         break
@@ -140,14 +140,28 @@ class Problem:
             print("Could not open the file")
             return []
 
+    
+    def judge_test_cases(self):
+        testjudge = []
 
-prb=Problem("P1","add two nos","Addition operation","Inputs given",[(1,2,3),(2,4,6)],1,12)
+        for i in self.testcase:
+            output = i[-1] # last element is output of problem
+            input_j = i[:len(i)-1] # extracting inputs
+            input_jstr = " ".join(map(str,input_j)) # conversion
+            outputstr = str(output) # string conversion
+
+            testjudge.append((input_jstr,outputstr))
+
+        return testjudge
+
+
+"""prb=Problem("P1","add two nos","Addition operation","Inputs given",[(1,2,3),(2,4,6)],1,12)
 prb.write_problem()
 prb.write_testcase()
 prb.add_test_cases((2,5,7))
 print(prb.get_all_testcases())
 prb.add_test_cases((2,5,7))
-print(prb.get_all_testcases())
+print(prb.get_all_testcases())"""
 
 
 

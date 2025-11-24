@@ -47,6 +47,6 @@ for i in range(test_count):
         loc=i
         break
 print('\nOverall:',end=' ')
-elif success==test_count: print('Accepted')
+if success==test_count: print('Accepted')
 elif success==-1: print(f'Limits exceeded at {loc+1}')
 elif success==-2: print(f'Output mismatch at {loc+1}')
