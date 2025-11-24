@@ -19,6 +19,7 @@ class Judge:
             subprocess.run(cmd, capture_output=True, timeout=self.time_limit)
             return output_file
         except:
+            print("Compilation error bruh")
             return None
 
     def run(self, exe_path, input_data, language):
@@ -43,6 +44,7 @@ class Judge:
             return result.stdout.decode().strip(), None
 
         except subprocess.TimeoutExpired:
+            print("TLE bruh be faster")
             return None, "TLE"
 
         except Exception as err:

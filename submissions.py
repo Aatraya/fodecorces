@@ -11,10 +11,10 @@ class submissions:
   def get_code(self, base_dir):
     submission_dir = create_submission_directory(base_dir, self.problem_id, self.submission_id) #method for saving the submitted code into the appropriate file
     self.directory_path = submission_dir
-    if self.language == "python":filename = "solution.py"
-    elif self.language == "c":filename = "solution.c"
-    elif self.language == "cpp":filename = "solution.cpp"
-    elif self.language == "java":filename = "Solution.java"
+    if self.language.lower() == "python":filename = "solution.py"
+    elif self.language.lower() == "c":filename = "solution.c"
+    elif self.language.lower() == "cpp":filename = "solution.cpp"
+    elif self.language.lower() == "java":filename = "Solution.java"
     else:raise ValueError("The language is not supported, please try again with a valid option.")
     file_path = os.path.join(submission_dir, filename)
     with open(file_path, "w") as f:
