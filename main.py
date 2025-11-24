@@ -63,6 +63,7 @@ sub = submissions(
     )
 
 code_path = sub.get_code(base_dir)
+sub.metadata()
 print(f"Submission {subid} saved to: {code_path}")
 
 
