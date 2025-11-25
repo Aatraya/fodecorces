@@ -61,8 +61,8 @@ def doSubmit():
         print("FodeCorces doesn't host this problem.")
         return
     
-    lang = input("Enter language: (python/java/c/cpp)")
-    if lang not in ["python","c","cpp","java"]:
+    lang = input("Enter language: (python/c/cpp) : ")
+    if lang not in ["python","c","cpp"]:
         print("Language is not supported")
         return 
 

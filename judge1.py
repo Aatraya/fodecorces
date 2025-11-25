@@ -34,10 +34,6 @@ class Judge:
             elif language in ("c", "cpp"):
                 cmd = [exe_path]
 
-            elif language == "java":
-                class_name = os.path.basename(exe_path)
-                cmd = ["java", class_name]
-
             result = subprocess.run(
                 cmd,
                 input=input_data.encode(),
@@ -48,7 +44,7 @@ class Judge:
             return result.stdout.decode().strip(), None
 
         except subprocess.TimeoutExpired:
-            print("TLE bruh be faster")
+            print("Time Limit Excedeeded")
             return None, "TLE"
 
         except Exception as err:
