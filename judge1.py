@@ -1,9 +1,12 @@
 import subprocess
+#import psutils
+#import times
 import os
 
 class Judge:
-    def __init__(self, tl=2):
+    def __init__(self, tl=2 ):
         self.time_limit = tl
+
     def compile_code(self, path, language):
         if language == "python":
             return path
@@ -19,7 +22,9 @@ class Judge:
             subprocess.run(cmd, capture_output=True, timeout=self.time_limit)
             return output_file
         except:
+            print("Compilation error")
             return None
+
 
     def run(self, exe_path, input_data, language):
         try:
@@ -43,10 +48,12 @@ class Judge:
             return result.stdout.decode().strip(), None
 
         except subprocess.TimeoutExpired:
+            print("TLE bruh be faster")
             return None, "TLE"
 
         except Exception as err:
             return None, "The error is " +str(err)
+
 
     def judge(self, path, language, testcases):#testcases is a list of tuples where first is input string and second is output string
         exe = self.compile_code(path, language)

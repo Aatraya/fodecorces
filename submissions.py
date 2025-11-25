@@ -1,6 +1,25 @@
 import os
 class submissions:
-  def __init__(self,sid,uid,pid,lang,code,tstamp): #constructor and attributes
+  def __init__(self,sid,uid,pid,lang,code,tstamp):
+     #constructor and attributes
+     
+# changes in validation 
+    if not uid or not isinstance(uid, str):
+      raise ValueError("User ID must be a non-empty string")
+    
+    # Validate problem_id
+    if not pid or not isinstance(pid, str):
+        raise ValueError("Problem ID must be a non-empty string")
+
+    if not code or not isinstance(code, str):
+        raise ValueError("Code must be a non-empty string")
+    
+    # Validate timestamp
+    if not isinstance(tstamp, (int, float)) or tstamp < 0:
+        raise ValueError("Timestamp must be a non-negative number")
+    
+
+
     self.submission_id=sid
     self.user_id = uid
     self.problem_id = pid
@@ -8,18 +27,22 @@ class submissions:
     self.code=code
     self.timestamp = tstamp
     self.directory_path = None
+
+
   def get_code(self, base_dir):
     submission_dir = create_submission_directory(base_dir, self.problem_id, self.submission_id) #method for saving the submitted code into the appropriate file
     self.directory_path = submission_dir
-    if self.language == "python":filename = "solution.py"
-    elif self.language == "c":filename = "solution.c"
-    elif self.language == "cpp":filename = "solution.cpp"
-    elif self.language == "java":filename = "Solution.java"
+    if self.language.lower() == "python":filename = "solution.py"
+    elif self.language.lower() == "c":filename = "solution.c"
+    elif self.language.lower() == "cpp":filename = "solution.cpp"
+    elif self.language.lower() == "java":filename = "Solution.java"
     else:raise ValueError("The language is not supported, please try again with a valid option.")
     file_path = os.path.join(submission_dir, filename)
     with open(file_path, "w") as f:
       f.write(self.code)
     return file_path
+
+
   def metadata(self):
     if self.directory_path is None:
       raise ValueError("The required problem's directory is not created yet. Please do so.")
@@ -27,6 +50,8 @@ class submissions:
     with open(metadata, "w") as f:
       f.write(f"submission_id: {self.submission_id}\nuser_id: {self.user_id}\nproblem_id: {self.problem_id}\nlanguage: {self.language}\ntimestamp: {self.timestamp}\ndirectory_path: {self.directory_path}\n")
     return metadata
+
+
 def create_submission_directory(base_dir, problem_id, submission_id): #method for creating a submission folder
   problem_folder = os.path.join(base_dir, f"problem_{problem_id}")
   submission_folder = os.path.join(problem_folder, f"submission_{submission_id}")
