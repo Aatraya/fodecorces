@@ -62,7 +62,7 @@ this function takes the code submission from user and connects main.py to Judge 
 
 ## ROLES
 
-- Aatrata Mukherjee: problem.py, main.py
+- Aatraya Mukherjee: problem.py, main.py
 - Kedar Mallya: submissions.py, judge.py
 - Nevaan Jain: main.py, readme.md
 
