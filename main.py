@@ -206,9 +206,11 @@ while True:
     elif(choice==3):
         doSubmit()
         i+=1
-    elif(choice==4):
+
+    elif (choice==4):
         print("Thanks for believing in the idea of FodeCorces. We hope you solve again soon.")
         break
+
     else:print("You did not enter a correct choice, please try again")
 
 

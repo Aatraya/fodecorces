@@ -121,35 +121,6 @@ class Problem:
             print("No such problem")
 
 
-    def add_test_cases(self,new_testcase):
-         #adding test case
-
-          # Validate testcase format
-        if not isinstance(new_testcase, tuple) or len(new_testcase) < 2:
-            print("Error: Test case must be a tuple with at least input and output!")
-            return
-
-        if(self.duplicate_entries(1,new_testcase)==0):
-            ((self.testcase).append(new_testcase))
-            self.write_testcase()
-            print(f"Addition of a new test case {new_testcase} is successful")
-
-        else:
-            print("addition failed")
-
-        
-        
-
-    def delete_test_cases(self,testcases_deleted):# deleting test case
-        
-        if testcases_deleted in self.testcase: #check for list of tuples me
-            ((self.testcase).remove(testcases_deleted))
-            self.write_testcase()
-            print(f"Succesful deletion of {testcases_deleted}")
-
-        else:
-            print("No such test cases")
-
     def get_all_testcases(self):
         file_name = self.problem_id + "Testcases"
 
@@ -186,13 +157,7 @@ class Problem:
         return testjudge
 
 
-"""prb=Problem("P1","add two nos","Addition operation","Inputs given",[(1,2,3),(2,4,6)],1,12)
-prb.write_problem()
-prb.write_testcase()
-prb.add_test_cases((2,5,7))
-print(prb.get_all_testcases())
-prb.add_test_cases((2,5,7))
-print(prb.get_all_testcases())"""
+
 
 
 
