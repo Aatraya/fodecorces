@@ -120,8 +120,9 @@ load_existing_problem()
 while True:
     print("Menu options:")
     print("1. Create a problem: ")
-    print("2. Submit a problem: ")
-    print("3. Exit")
+    print("2. View problem")
+    print("3. Submit a problem: ")
+    print("4. Exit")
 
     try:
         choice = int(input("Enter the choice: "))
@@ -192,10 +193,20 @@ while True:
         problems[prbid]=prb
 
         createProblemW()
-    elif(choice==2):
+
+    elif (choice==2):
+        pid = input("Enter problem id")
+
+        if pid not in problems:
+            print("No such problem")
+            continue
+
+        prb = problems[pid]
+        prb.show_problem()
+    elif(choice==3):
         doSubmit()
         i+=1
-    elif(choice==3):
+    elif(choice==4):
         print("Thanks for believing in the idea of FodeCorces. We hope you solve again soon.")
         break
     else:print("You did not enter a correct choice, please try again")
