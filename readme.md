@@ -71,3 +71,4 @@ this function takes the code submission from user and connects main.py to Judge 
 * supports only 3 languages: c, c++ and python
 * does not check for memory limit exceeded
 * uses txt file instead of csv
+* for compilation error , we donot explicitly mention this error . However the test case fails
