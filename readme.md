@@ -2,9 +2,9 @@
 
 This project is made by team Fodecorces . This team has the following members:
 
+- Aatraya Mukherjee(IC2025004)
 - Kedar Mallya(BC2025043)
 - Nevaan Jain(BC2025068)
-- Aatraya Mukherjee(IC2025004)
 
 This project allows you to enter a problem and its testcases and submit solutions to such problems . It then evaluates and compiles them to give output . 
 
