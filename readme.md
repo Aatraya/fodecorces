@@ -57,8 +57,8 @@ this function takes the code submission from user and connects main.py to Judge 
 * after the functions made, memory for problems is made and the pre existing problems are stored. then code for the menu interactions is made. this code is rigorous to make sure the flow of code is maintained. 
 
 ## EXAMPLE I/O
-
-
+<img width="1154" height="526" alt="Screenshot 2025-11-25 at 9 59 12 PM" src="https://github.com/user-attachments/assets/a52c38c6-2a3c-4b6c-8223-40a75b273766" />
+<img width="1226" height="582" alt="Screenshot 2025-11-25 at 11 10 54 PM" src="https://github.com/user-attachments/assets/07677b3e-bb0c-47f8-acae-6f07d62012ac" />
 
 ## ROLES
 
