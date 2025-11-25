@@ -60,6 +60,12 @@ this function takes the code submission from user and connects main.py to Judge 
 
 
 
+## ROLES
+
+- Aatrata Mukherjee: problem.py, main.py
+- Kedar Mallya: submissions.py, judge.py
+- Nevaan Jain: main.py and readme.md
+
 ## LIMITATIONS OF OUR CODE
 
 * supports only 3 languages: c, c++ and python
